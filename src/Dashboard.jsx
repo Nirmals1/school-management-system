@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import AdminLayout from "./Layouts/AdminLayout";
+import Category from "./pages/admin/Category/Category";
 import AddGrade from "./pages/admin/Grade/AddGrade";
 import Grade from "./pages/admin/Grade/Grade";
-import AddGuardian from "./pages/admin/Guardian/AddGuardian";
-import Guardian from "./pages/admin/Guardian/Guardian";
 import AddStaff from "./pages/admin/Staff/AddStaff";
 import Staff from "./pages/admin/Staff/Staff";
 import AddStudent from "./pages/admin/students/AddStudent";
@@ -32,10 +31,6 @@ function Dashboard() {
 						<Route index element={<Grade />} />
 						<Route path="create" element={<AddGrade />} />
 					</Route>
-					<Route path="/guardian">
-						<Route index element={<Guardian />} />
-						<Route path="create" element={<AddGuardian />} />
-					</Route>
 					<Route path="/staff">
 						<Route index element={<Staff />} />
 						<Route path="create" element={<AddStaff />} />
@@ -43,6 +38,9 @@ function Dashboard() {
 					<Route path="/subject">
 						<Route index element={<Subject />} />
 						<Route path="create" element={<AddSubject />} />
+					</Route>
+					<Route path="/category">
+						<Route index element={<Category />} />
 					</Route>
 				</Routes>
 			</AdminLayout>

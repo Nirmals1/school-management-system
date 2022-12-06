@@ -23,12 +23,12 @@ const AddSubject = () => {
 				<div className="grid grid-cols-2 ">
 					<div>
 						<label htmlFor="name" className="block text-gray-900">
-							Subject Id
+							Subject Code
 						</label>
 						<input
 							type="text"
-							name="name"
-							id="name"
+							name="code"
+							id="code"
 							className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 						/>
 						<label htmlFor="mname" className="block text-gray-900">
@@ -45,8 +45,8 @@ const AddSubject = () => {
 						</label>
 						<input
 							type="text"
-							name="name"
-							id="name"
+							name="fullmarks_th"
+							id="fullmarks_th"
 							className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 						/>
 						<label htmlFor="mname" className="block text-gray-900">
@@ -54,8 +54,8 @@ const AddSubject = () => {
 						</label>
 						<input
 							type="text"
-							name="name"
-							id="name"
+							name="passmarks_th"
+							id="passmarks_th"
 							className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 						/>
 						<label htmlFor="mname" className="block text-gray-900">
@@ -63,8 +63,8 @@ const AddSubject = () => {
 						</label>
 						<input
 							type="text"
-							name="name"
-							id="name"
+							name="fullmarks_pr"
+							id="fullmarks_pr"
 							className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 						/>
 						<label htmlFor="mname" className="block text-gray-900">
@@ -72,8 +72,8 @@ const AddSubject = () => {
 						</label>
 						<input
 							type="text"
-							name="name"
-							id="name"
+							name="passmarks_pr"
+							id="passmarks_pr"
 							className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 						/>
 						<div className="my-3 flex justify-end">

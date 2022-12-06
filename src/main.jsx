@@ -12,8 +12,6 @@ import Teacher from "./pages/admin/Teacher/Teacher";
 import AddTeacher from "./pages/admin/Teacher/AddTeacher";
 import Grade from "./pages/admin/Grade/Grade";
 import AddGrade from "./pages/admin/Grade/AddGrade";
-import Guardian from "./pages/admin/Guardian/Guardian";
-import AddGuardian from "./pages/admin/Guardian/AddGuardian";
 import Staff from "./pages/admin/Staff/Staff";
 import AddStaff from "./pages/admin/Staff/AddStaff";
 import Subject from "./pages/Subject/Subject";

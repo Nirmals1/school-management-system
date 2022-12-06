@@ -30,7 +30,6 @@ function Sidebar() {
 								: " flex px-3 my-5 items-center hover:text-red-500"
 						}
 						end
-						end
 						to="/"
 					>
 						<i className="ri-dashboard-3-line mr-2"></i> Dashboard
@@ -47,8 +46,6 @@ function Sidebar() {
 									? "pl-10 border-l-4  border-l-red-500 px-3 my-5 text-red-500 flex items-center"
 									: " flex pl-10 px-3 my-5 items-center hover:text-red-500"
 							}
-							end
-							end
 							to="/student/create"
 						>
 							<i className="ri-user-2-line px-2"></i>Add Student
@@ -120,34 +117,6 @@ function Sidebar() {
 						</NavLink>
 					</NavMenu>
 					<NavMenu
-						icon="ri-user-3-line"
-						name="Guardian"
-						link="/guardian"
-					>
-						<NavLink
-							className={({ isActive }) =>
-								isActive
-									? "pl-10 border-l-4  border-l-red-500 px-3 my-5 text-red-500 flex items-center"
-									: " flex pl-10 px-3 my-5 items-center hover:text-red-500"
-							}
-							end
-							to="/guardian/create"
-						>
-							<i className="ri-user-2-line px-2"></i>Add Guardian
-						</NavLink>
-						<NavLink
-							className={({ isActive }) =>
-								isActive
-									? "pl-10 border-l-4  border-l-red-500 px-3 my-5 text-red-500 flex items-center"
-									: " flex pl-10 px-3 my-5 items-center hover:text-red-500"
-							}
-							end
-							to="/guardian"
-						>
-							<i className="ri-user-2-line px-2"></i>View Guardian
-						</NavLink>
-					</NavMenu>
-					<NavMenu
 						icon="ri-user-2-line"
 						name="Subject"
 						link="/subject"
@@ -199,6 +168,23 @@ function Sidebar() {
 							to="/staff"
 						>
 							<i className="ri-user-2-line px-2"></i>View Staff
+						</NavLink>
+					</NavMenu>
+					<NavMenu
+						icon="ri-user-2-line"
+						name="category"
+						link="/category"
+					>
+						<NavLink
+							className={({ isActive }) =>
+								isActive
+									? "pl-10 border-l-4  border-l-red-500 px-3 my-5 text-red-500 flex items-center"
+									: " flex pl-10 px-3 my-5 items-center hover:text-red-500"
+							}
+							end
+							to="/staff/create"
+						>
+							<i className="ri-user-2-line px-2"></i>Category
 						</NavLink>
 					</NavMenu>
 				</div>

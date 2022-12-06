@@ -1,7 +1,7 @@
 import { Navigate, useNavigate } from "react-router-dom";
 import AdminLayout from "../../../Layouts/AdminLayout";
 import { Formik } from "formik";
-import { string, object, number } from "yup";
+import { string, object, number, date } from "yup";
 import axios from "axios";
 import axiosInstance from "../../../apiConfigs/axiosInstance";
 
@@ -12,12 +12,12 @@ function AddStudent() {
 		middle_name: string().nullable(),
 		last_name: string().required(),
 		fullName_nepali: string().required(),
-		dob: number().required(),
+		phone: string().required(),
+		dob: date().required(),
 		gender: string().required(),
 		address: string().required(),
 		age: number().required(),
 		contact_no: string().required(),
-		// email: string().required(),
 		nationality: string().required(),
 		religion: string().required(),
 		ethnicity: string().required(),
@@ -61,12 +61,12 @@ function AddStudent() {
 						middle_name: "",
 						last_name: "",
 						fullName_nepali: "",
+						phone: "",
 						dob: "",
 						gender: "",
 						address: "",
 						age: "",
 						contact_no: "",
-						// email: string().required(),
 						nationality: "",
 						religion: "",
 						ethnicity: "",
@@ -84,8 +84,12 @@ function AddStudent() {
 						email: "",
 					}}
 					validationSchema={studentschema}
+					validateOnBlur={false}
+					isInitialValid={false}
+					validateOnChange={false}
 					onSubmit={(values) => {
-						console.log("demo");
+						console.log(values);
+						// console.log("demo");
 						axiosInstance
 							.post("/students/store", values)
 							.then((res) => {
@@ -94,7 +98,14 @@ function AddStudent() {
 							});
 					}}
 				>
-					{({ values, errors, handleChange, handleSubmit }) => {
+					{({
+						values,
+						touched,
+						errors,
+						handleChange,
+						handleBlur,
+						handleSubmit,
+					}) => {
 						return (
 							<form onSubmit={handleSubmit}>
 								<div className="grid md:grid-cols-3">
@@ -110,6 +121,7 @@ function AddStudent() {
 											name="first_name"
 											id="fist_name"
 											onChange={handleChange}
+											value={values.first_name}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
 										<p className="text-red-500 text-sm">
@@ -127,6 +139,9 @@ function AddStudent() {
 											type="text"
 											name="middle_name"
 											id="middle_name"
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.middle_name}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
 										<p className="text-red-500 text-sm">
@@ -144,6 +159,9 @@ function AddStudent() {
 											type="text"
 											name="last_name"
 											id="last_name"
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.last_name}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
 										<p className="text-red-500 text-sm">
@@ -160,8 +178,11 @@ function AddStudent() {
 										</label>
 										<input
 											type="text"
-											name="fullname_nepali"
+											name="fullName_nepali"
 											id="fullname_nepali"
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.fullName_nepali}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
 										<p className="text-red-500 text-sm">
@@ -180,6 +201,9 @@ function AddStudent() {
 											type="number"
 											name="age"
 											id="name"
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.age}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
 										<p className="text-red-500 text-sm">
@@ -197,6 +221,9 @@ function AddStudent() {
 											type="phone"
 											name="contact_no"
 											id="contact_no"
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.contact_no}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
 										<p className="text-red-500 text-sm">
@@ -214,6 +241,9 @@ function AddStudent() {
 											type="phone"
 											name="phone"
 											id="name"
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.phone}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
 										<p className="text-red-500 text-sm">
@@ -231,6 +261,9 @@ function AddStudent() {
 											type="text"
 											name="address"
 											id="name"
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.address}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
 										<p className="text-red-500 text-sm">
@@ -246,9 +279,12 @@ function AddStudent() {
 											Email
 										</label>
 										<input
-											type="number"
+											type="text"
 											name="email"
 											id="email"
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.email}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
 										<p className="text-red-500 text-sm">
@@ -266,8 +302,14 @@ function AddStudent() {
 											type="number"
 											name="grade_id"
 											id="grade_id"
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.grade_id}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
+										<p className="text-red-500 text-sm">
+											{errors.grade_id}
+										</p>
 									</div>
 
 									<div className="">
@@ -281,20 +323,29 @@ function AddStudent() {
 											type="radio"
 											defaultValue="Male"
 											name="gender"
-										/>{" "}
+											onChange={handleChange}
+											onBlur={handleBlur}
+										/>
 										<span className="px-2">Male</span>
 										<input
 											type="radio"
 											defaultValue="Female"
 											name="gender"
+											onChange={handleChange}
+											onBlur={handleBlur}
 										/>{" "}
 										<span className="px-2">Female</span>
 										<input
 											type="radio"
 											defaultValue="Other"
 											name="gender"
-										/>{" "}
+											onChange={handleChange}
+											onBlur={handleBlur}
+										/>
 										Other
+										<p className="text-red-500 text-sm">
+											{errors.gender}
+										</p>
 									</div>
 									<div>
 										<label
@@ -307,6 +358,9 @@ function AddStudent() {
 											type="date"
 											name="dob"
 											id="dob"
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.dob}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
 										<p className="text-red-500 text-sm">
@@ -324,10 +378,18 @@ function AddStudent() {
 										<select
 											id="nationality"
 											name="nationality"
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.nationality}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										>
 											<option selected>Choose...</option>
-											<option>...</option>
+											<option value="nepali">
+												Nepali
+											</option>
+											<option value="indian">
+												Indian
+											</option>
 										</select>
 										<p className="text-red-500 text-sm">
 											{errors.nationality}
@@ -344,12 +406,23 @@ function AddStudent() {
 											<select
 												id="religion"
 												name="religion"
+												onChange={handleChange}
+												onBlur={handleBlur}
+												value={values.religion}
 												className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 											>
 												<option selected>
 													Choose...
 												</option>
-												<option>...</option>
+												<option className="christian">
+													Christian
+												</option>
+												<option className="buddhist">
+													Buddhist
+												</option>
+												<option className="hindu">
+													Hindu
+												</option>
 											</select>
 											<p className="text-red-500 text-sm">
 												{errors.religion}
@@ -367,12 +440,17 @@ function AddStudent() {
 											<select
 												id="ethnicity"
 												name="ethnicity"
+												onChange={handleChange}
+												onBlur={handleBlur}
+												value={values.ethnicity}
 												className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 											>
 												<option selected>
 													Choose...
 												</option>
-												<option>...</option>
+												<option value="a">a</option>
+												<option value="b">b</option>
+												<option value="c">c</option>
 											</select>
 											<p className="text-red-500 text-sm">
 												{errors.ethnicity}
@@ -399,6 +477,9 @@ function AddStudent() {
 											type="text"
 											name="father_name"
 											id="father's name"
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.father_name}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
 										<p className="text-red-500 text-sm">
@@ -416,6 +497,9 @@ function AddStudent() {
 											type="text"
 											name="mother_name"
 											id="mother's name"
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.mother_name}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
 										<p className="text-red-500 text-sm">
@@ -432,7 +516,10 @@ function AddStudent() {
 										<input
 											type="phone"
 											name="phone"
-											id="telephone"
+											id="phone"
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.phone}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
 										<p className="text-red-500 text-sm">
@@ -450,6 +537,9 @@ function AddStudent() {
 											type="phone"
 											name="mobile"
 											id="mobile"
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.mobile}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
 										<p className="text-red-500 text-sm">
@@ -467,6 +557,9 @@ function AddStudent() {
 											type="text"
 											name="address"
 											id="name"
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.address}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
 										<p className="text-red-500 text-sm">
@@ -484,6 +577,9 @@ function AddStudent() {
 											type="text"
 											name="parent_address"
 											id="parent_address"
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.parent_address}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
 										<p className="text-red-500 text-sm">
@@ -501,6 +597,9 @@ function AddStudent() {
 											type="text"
 											name="email"
 											id="email"
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.email}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
 										<p className="text-red-500 text-sm">
@@ -526,6 +625,9 @@ function AddStudent() {
 											type="text"
 											name="previous_school"
 											id="previous_school"
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.previous_school}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
 										<p className="text-red-500 text-sm">
@@ -543,6 +645,9 @@ function AddStudent() {
 											type="text"
 											name="address_school"
 											id="address_school"
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.address_school}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
 										<p className="text-red-500 text-sm">

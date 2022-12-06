@@ -3,19 +3,19 @@ import { NavLink } from "react-router-dom";
 import useSWR from "swr";
 import axiosInstance from "../../../apiConfigs/axiosInstance";
 import AdminLayout from "../../../Layouts/AdminLayout";
-import AddGrade from "./AddGrade";
+import AddCategory from "./AddCategory";
 
-const Grade = () => {
+const Category = () => {
 	const fetcher = (url) =>
 		axiosInstance.get(url).then((res) => res.data.data.data);
-	const { data, mutate, error } = useSWR("/grades/all", fetcher);
+	const { data, mutate, error } = useSWR("/categories/all", fetcher);
 	console.log(error);
 	return (
 		<div>
-			<AddGrade mutate={mutate} />
+			<AddCategory mutate={mutate} />
 			<div className="px-10 py-6 w-full">
 				<div className="flex justify-between">
-					{/* <h1 className="text-4xl text-gray-700">Grades</h1> */}
+					{/* <h1 className="text-4xl text-gray-700">Categorys</h1> */}
 				</div>
 				<hr className="my-2" />
 				<div className="card-body">
@@ -26,7 +26,7 @@ const Grade = () => {
 									SNo.
 								</th>
 								<th class="border border-slate-300 px-2 ">
-									Grade Name
+									Category Name
 								</th>
 								<th class="border border-slate-300 px-2 ">
 									Action
@@ -35,14 +35,14 @@ const Grade = () => {
 						</thead>
 						<tbody>
 							{data &&
-								data.map((grade, index) => {
+								data.map((Category, index) => {
 									return (
 										<tr>
 											<td class="border border-slate-300 px-2 ...">
 												{index + 1}
 											</td>
 											<td class="border border-slate-300 px-2 ...">
-												{grade.name}
+												{Category.name}
 											</td>
 											<td class="border border-slate-300 px-2 py-2 flex justify-end">
 												<button class="mx-2 bg-lime-500 hover:bg-lime-600 text-white py-1 px-4 rounded-full">
@@ -76,4 +76,4 @@ const Grade = () => {
 	);
 };
 
-export default Grade;
+export default Category;

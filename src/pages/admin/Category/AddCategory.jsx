@@ -4,30 +4,31 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { number, object, string } from "yup";
 import axiosInstance from "../../../apiConfigs/axiosInstance";
-import AdminLayout from "../../../Layouts/AdminLayout";
 
-const AddGrade = ({ mutate }) => {
-	const gradeschema = object({
+const AddCategory = ({ mutate }) => {
+	const categorySchema = object({
 		name: string().required(),
 	});
 	const navigate = useNavigate();
 	return (
 		<div>
 			<h1 className="text-gray-800 text-2xl font-bold mt-8 mb-3 ">
-				Grade Details
+				Category Details
 			</h1>
 			<hr className="my-2" />
 			<Formik
 				initialValues={{
 					name: "",
 				}}
-				validationSchema={gradeschema}
+				validationSchema={categorySchema}
 				onSubmit={(values) => {
 					console.log(values);
-					axiosInstance.post("/grades/store", values).then((res) => {
-						toast.success(res.data.message);
-						mutate();
-					});
+					axiosInstance
+						.post("/categories/store", values)
+						.then((res) => {
+							toast.success(res.data.message);
+							mutate();
+						});
 				}}
 			>
 				{({ values, errors, handleChange, handleSubmit }) => {
@@ -40,7 +41,7 @@ const AddGrade = ({ mutate }) => {
 											htmlFor="mname"
 											className="block text-gray-900"
 										>
-											Grade Name
+											Category Name
 										</label>
 										<input
 											type="text"
@@ -70,4 +71,4 @@ const AddGrade = ({ mutate }) => {
 	);
 };
 
-export default AddGrade;
+export default AddCategory;
