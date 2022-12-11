@@ -1,6 +1,6 @@
 import { Navigate, useNavigate } from "react-router-dom";
 import AdminLayout from "../../../Layouts/AdminLayout";
-import { Formik } from "formik";
+import { ErrorMessage, Formik } from "formik";
 import { string, object, number, date } from "yup";
 import axios from "axios";
 import axiosInstance from "../../../apiConfigs/axiosInstance";
@@ -32,7 +32,7 @@ function AddStudent() {
 		parent_address: string().required(),
 		telephone: string().required(),
 		mobile: string().required(),
-		email: string().required(),
+		email: string().required().email(),
 	});
 	return (
 		<>
@@ -84,9 +84,6 @@ function AddStudent() {
 						email: "",
 					}}
 					validationSchema={studentschema}
-					validateOnBlur={false}
-					isInitialValid={false}
-					validateOnChange={false}
 					onSubmit={(values) => {
 						console.log(values);
 						// console.log("demo");
@@ -100,9 +97,9 @@ function AddStudent() {
 				>
 					{({
 						values,
-						touched,
 						errors,
 						handleChange,
+						touched,
 						handleBlur,
 						handleSubmit,
 					}) => {
@@ -124,9 +121,11 @@ function AddStudent() {
 											value={values.first_name}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
-										<p className="text-red-500 text-sm">
-											{errors.first_name}
-										</p>
+										<ErrorMessage
+											name="first_name"
+											component="div"
+											className="text-red-500 text-sm"
+										/>
 									</div>
 									<div>
 										<label
@@ -144,9 +143,11 @@ function AddStudent() {
 											value={values.middle_name}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
-										<p className="text-red-500 text-sm">
-											{errors.middle_name}
-										</p>
+										<ErrorMessage
+											name="middle_name"
+											component="div"
+											className="text-red-500 text-sm"
+										/>
 									</div>
 									<div>
 										<label
@@ -164,9 +165,11 @@ function AddStudent() {
 											value={values.last_name}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
-										<p className="text-red-500 text-sm">
-											{errors.last_name}
-										</p>
+										<ErrorMessage
+											name="last_name"
+											component="div"
+											className="text-red-500 text-sm"
+										/>
 									</div>
 
 									<div>
@@ -185,9 +188,11 @@ function AddStudent() {
 											value={values.fullName_nepali}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
-										<p className="text-red-500 text-sm">
-											{errors.fullName_nepali}
-										</p>
+										<ErrorMessage
+											name="fullName_nepali"
+											component="div"
+											className="text-red-500 text-sm"
+										/>
 									</div>
 
 									<div>
@@ -206,9 +211,11 @@ function AddStudent() {
 											value={values.age}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
-										<p className="text-red-500 text-sm">
-											{errors.age}
-										</p>
+										<ErrorMessage
+											name="age"
+											component="div"
+											className="text-red-500 text-sm"
+										/>
 									</div>
 									<div>
 										<label
@@ -226,9 +233,11 @@ function AddStudent() {
 											value={values.contact_no}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
-										<p className="text-red-500 text-sm">
-											{errors.contact_no}
-										</p>
+										<ErrorMessage
+											name="contact_no"
+											component="div"
+											className="text-red-500 text-sm"
+										/>
 									</div>
 									<div>
 										<label
@@ -246,9 +255,11 @@ function AddStudent() {
 											value={values.phone}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
-										<p className="text-red-500 text-sm">
-											{errors.phone}
-										</p>
+										<ErrorMessage
+											name="phone"
+											component="div"
+											className="text-red-500 text-sm"
+										/>
 									</div>
 									<div>
 										<label
@@ -266,9 +277,11 @@ function AddStudent() {
 											value={values.address}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
-										<p className="text-red-500 text-sm">
-											{errors.address}
-										</p>
+										<ErrorMessage
+											name="address"
+											component="div"
+											className="text-red-500 text-sm"
+										/>
 									</div>
 
 									<div>
@@ -287,9 +300,11 @@ function AddStudent() {
 											value={values.email}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
-										<p className="text-red-500 text-sm">
-											{errors.email}
-										</p>
+										<ErrorMessage
+											name="email"
+											component="div"
+											className="text-red-500 text-sm"
+										/>
 									</div>
 									<div>
 										<label
@@ -307,9 +322,11 @@ function AddStudent() {
 											value={values.grade_id}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
-										<p className="text-red-500 text-sm">
-											{errors.grade_id}
-										</p>
+										<ErrorMessage
+											name="grade_id"
+											component="div"
+											className="text-red-500 text-sm"
+										/>
 									</div>
 
 									<div className="">
@@ -343,9 +360,11 @@ function AddStudent() {
 											onBlur={handleBlur}
 										/>
 										Other
-										<p className="text-red-500 text-sm">
-											{errors.gender}
-										</p>
+										<ErrorMessage
+											name="gender"
+											component="div"
+											className="text-red-500 text-sm"
+										/>
 									</div>
 									<div>
 										<label
@@ -363,9 +382,11 @@ function AddStudent() {
 											value={values.dob}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
-										<p className="text-red-500 text-sm">
-											{errors.dob}
-										</p>
+										<ErrorMessage
+											name="dob"
+											component="div"
+											className="text-red-500 text-sm"
+										/>
 									</div>
 
 									<div>
@@ -391,9 +412,11 @@ function AddStudent() {
 												Indian
 											</option>
 										</select>
-										<p className="text-red-500 text-sm">
-											{errors.nationality}
-										</p>
+										<ErrorMessage
+											name="nationality"
+											component="div"
+											className="text-red-500 text-sm"
+										/>
 									</div>
 									<div>
 										<div>
@@ -424,9 +447,11 @@ function AddStudent() {
 													Hindu
 												</option>
 											</select>
-											<p className="text-red-500 text-sm">
-												{errors.religion}
-											</p>
+											<ErrorMessage
+												name="religion"
+												component="div"
+												className="text-red-500 text-sm"
+											/>
 										</div>
 									</div>
 									<div>
@@ -452,9 +477,11 @@ function AddStudent() {
 												<option value="b">b</option>
 												<option value="c">c</option>
 											</select>
-											<p className="text-red-500 text-sm">
-												{errors.ethnicity}
-											</p>
+											<ErrorMessage
+												name="ethnicity"
+												component="div"
+												className="text-red-500 text-sm"
+											/>
 										</div>
 									</div>
 								</div>
@@ -482,9 +509,11 @@ function AddStudent() {
 											value={values.father_name}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
-										<p className="text-red-500 text-sm">
-											{errors.father_name}
-										</p>
+										<ErrorMessage
+											name="father_name"
+											component="div"
+											className="text-red-500 text-sm"
+										/>
 									</div>
 									<div>
 										<label
@@ -502,9 +531,11 @@ function AddStudent() {
 											value={values.mother_name}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
-										<p className="text-red-500 text-sm">
-											{errors.mother_name}
-										</p>
+										<ErrorMessage
+											name="mother_name"
+											component="div"
+											className="text-red-500 text-sm"
+										/>
 									</div>
 									<div>
 										<label
@@ -522,9 +553,11 @@ function AddStudent() {
 											value={values.phone}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
-										<p className="text-red-500 text-sm">
-											{errors.phone}
-										</p>
+										<ErrorMessage
+											name="phone"
+											component="div"
+											className="text-red-500 text-sm"
+										/>
 									</div>
 									<div>
 										<label
@@ -542,9 +575,11 @@ function AddStudent() {
 											value={values.mobile}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
-										<p className="text-red-500 text-sm">
-											{errors.mobile}
-										</p>
+										<ErrorMessage
+											name="mobile"
+											component="div"
+											className="text-red-500 text-sm"
+										/>
 									</div>
 									<div>
 										<label
@@ -562,9 +597,11 @@ function AddStudent() {
 											value={values.address}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
-										<p className="text-red-500 text-sm">
-											{errors.address}
-										</p>
+										<ErrorMessage
+											name="address"
+											component="div"
+											className="text-red-500 text-sm"
+										/>
 									</div>
 									<div>
 										<label
@@ -582,9 +619,11 @@ function AddStudent() {
 											value={values.parent_address}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
-										<p className="text-red-500 text-sm">
-											{errors.parent_address}
-										</p>
+										<ErrorMessage
+											name="parent_address"
+											component="div"
+											className="text-red-500 text-sm"
+										/>
 									</div>
 									<div>
 										<label
@@ -602,9 +641,11 @@ function AddStudent() {
 											value={values.email}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
-										<p className="text-red-500 text-sm">
-											{errors.email}
-										</p>
+										<ErrorMessage
+											name="email"
+											component="div"
+											className="text-red-500 text-sm"
+										/>
 									</div>
 								</div>
 
@@ -630,9 +671,11 @@ function AddStudent() {
 											value={values.previous_school}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
-										<p className="text-red-500 text-sm">
-											{errors.previous_school}
-										</p>
+										<ErrorMessage
+											name="previous_school"
+											component="div"
+											className="text-red-500 text-sm"
+										/>
 									</div>
 									<div>
 										<label
@@ -650,9 +693,11 @@ function AddStudent() {
 											value={values.address_school}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
-										<p className="text-red-500 text-sm">
-											{errors.address_school}
-										</p>
+										<ErrorMessage
+											name="address_school"
+											component="div"
+											className="text-red-500 text-sm"
+										/>
 									</div>
 								</div>
 

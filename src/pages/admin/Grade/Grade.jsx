@@ -1,18 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import useSWR from "swr";
 import axiosInstance from "../../../apiConfigs/axiosInstance";
 import AdminLayout from "../../../Layouts/AdminLayout";
 import AddGrade from "./AddGrade";
 import { Pagination } from "@material-ui/lab";
+import { CircularProgress } from "@material-ui/core";
 
 const Grade = () => {
 	const [page, setPage] = useState(1);
 	const [totalPages, setTotalPages] = useState(1);
 	const [grades, setGrades] = useState([]);
 	const [editGrade, setEditGrade] = useState({});
+	// const [tableLoading, setTableLoading] = useState(false);
 	const fetcher = (url) => axiosInstance.get(url).then((res) => res.data);
-	const { data, mutate, error } = useSWR(
+	const { data, mutate, error, isValidating } = useSWR(
 		`/grades/all?page=${page}`,
 		fetcher,
 		{
@@ -20,15 +22,22 @@ const Grade = () => {
 				setTotalPages(data.data.last_page);
 				setGrades(data.data.data);
 			},
+			revalidateOnFocus: false,
 		}
 	);
+	console.log(isValidating);
 
 	return (
 		<div>
-			<AddGrade mutate={mutate} editGrade={editGrade} />
-			<div className="py-6 w-full">
+			<AddGrade
+				mutate={mutate}
+				editGrade={editGrade}
+				setEditGrade={setEditGrade}
+			/>
+			<hr className="my-3" />
+			<div className="w-full space-y-6">
 				<div className="flex justify-between">
-					{/* <h1 className="text-4xl text-gray-700">Grades</h1> */}
+					<h1 className="text-4xl text-gray-700">Grades</h1>
 				</div>
 				<div className="card-body">
 					<table class="border-collapse border border-slate-400 w-full mb-3">
@@ -46,17 +55,27 @@ const Grade = () => {
 							</tr>
 						</thead>
 						<tbody>
-							{grades &&
+							{isValidating && (
+								<tr>
+									<td colSpan={3}>
+										<div className="py-5 flex justify-center w-full">
+											<CircularProgress />
+										</div>
+									</td>
+								</tr>
+							)}
+							{!isValidating &&
+								grades &&
 								grades.map((grade, index) => {
 									return (
 										<tr key={index}>
-											<td class="border border-slate-300 px-2 ...">
+											<td class="border border-slate-300 px-2">
 												{index + 1 + (page - 1) * 10}
 											</td>
-											<td class="border border-slate-300 px-2 ...">
+											<td class="border border-slate-300 px-2">
 												{grade.name}
 											</td>
-											<td class="border border-slate-300 px-2 py-2 flex justify-end">
+											<td class="border-b border-slate-300 px-2 py-2 flex justify-center">
 												<button
 													onClick={() => {
 														setEditGrade(grade);
@@ -78,7 +97,6 @@ const Grade = () => {
 										</tr>
 									);
 								})}
-							{!grades && <div>Loading...</div>}
 						</tbody>
 					</table>
 					<Pagination

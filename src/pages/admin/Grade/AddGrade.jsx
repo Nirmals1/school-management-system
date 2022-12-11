@@ -1,3 +1,4 @@
+import { CircularProgress } from "@material-ui/core";
 import { Formik } from "formik";
 import React, { useEffect } from "react";
 import { useState } from "react";
@@ -8,7 +9,7 @@ import { number, object, string } from "yup";
 import axiosInstance from "../../../apiConfigs/axiosInstance";
 import AdminLayout from "../../../Layouts/AdminLayout";
 
-const AddGrade = ({ mutate, editGrade }) => {
+const AddGrade = ({ mutate, editGrade, setEditGrade }) => {
 	const gradeschema = object({
 		name: string().required(),
 	});
@@ -25,27 +26,38 @@ const AddGrade = ({ mutate, editGrade }) => {
 				}}
 				enableReinitialize
 				validationSchema={gradeschema}
-				onSubmit={(values, { resetForm }) => {
-					console.log(values);
-					if (editGrade) {
-						// axiosInstance
-						// 	.put(`/grades/update/${editGrade.id}`, values)
-						// 	.then((res) => {
-						// 		toast.success(res.data.message);
-						// 		mutate();
-						// 	});
+				onSubmit={(values, { setErrors }) => {
+					if (editGrade.name) {
+						axiosInstance
+							.put(`/grades/update/${editGrade.id}`, values)
+							.then((res) => {
+								setEditGrade({});
+								toast.success(res.data.message);
+								mutate();
+							})
+							.catch((err) => {
+								toast.error(err.response.data.message);
+							});
 					} else {
 						axiosInstance
 							.post("/grades/store", values)
 							.then((res) => {
 								toast.success(res.data.message);
 								mutate();
+							})
+							.catch((err) => {
+								toast.error(err.response.data.message);
 							});
 					}
-					resetForm();
 				}}
 			>
-				{({ values, errors, handleChange, handleSubmit }) => {
+				{({
+					values,
+					errors,
+					handleChange,
+					handleSubmit,
+					isSubmitting,
+				}) => {
 					return (
 						<form onSubmit={handleSubmit}>
 							<div>
@@ -59,8 +71,9 @@ const AddGrade = ({ mutate, editGrade }) => {
 												Grade Name
 											</label>
 											<input
-												type="search"
+												type="text"
 												name="name"
+												autoComplete="off"
 												onChange={handleChange}
 												value={values.name}
 												id="name"
@@ -73,10 +86,24 @@ const AddGrade = ({ mutate, editGrade }) => {
 											</p>
 										)}
 									</div>
-									<div className="flex justify-end items-end mb-2">
-										<button className="px-5 py-2 rounded-full bg-teal-500 text-white shadow-sm hover:bg-teal-600">
-											Save
+									<div className="flex justify-end items-end mb-2 gap-2">
+										<button
+											type="submit"
+											className="px-5 py-2 rounded-full bg-teal-500 text-white shadow-sm hover:bg-teal-600"
+										>
+											{editGrade.name ? "Update" : "Add"}
 										</button>
+										{/* switch for add button if editGrade.name is null */}
+										{editGrade.name && (
+											<div
+												className="px-5 py-2 rounded-full bg-red-500 text-white shadow-sm hover:bg-red-600 cursor-pointer"
+												onClick={() => {
+													setEditGrade({});
+												}}
+											>
+												Cancel
+											</div>
+										)}
 									</div>
 								</div>
 							</div>
