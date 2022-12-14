@@ -7,11 +7,11 @@ const Subject = () => {
 		<div>
 			<div className="px-10 py-6 w-full">
 				<div className="flex justify-between">
-					<h1 className="text-4xl text-gray-700">Students</h1>
+					<h1 className="text-4xl text-gray-700">Subjects</h1>
 
 					<NavLink to="create">
 						<button className="px-4 py-1 rounded-full bg-teal-500 hover:bg-teal-600 text-white">
-							Add Student
+							Add Subject
 						</button>
 					</NavLink>
 				</div>
@@ -24,16 +24,22 @@ const Subject = () => {
 									S.No.
 								</th>
 								<th class="border border-slate-300 px-2 ">
-									Name
+									S ID
 								</th>
 								<th class="border border-slate-300 px-2 ...">
-									Class
+									Subject Name
 								</th>
 								<th class="border border-slate-300 px-2 ...">
-									Address
+									FullMark(TH)
 								</th>
 								<th class="border border-slate-300 px-2 ...">
-									Phone no.
+									PassMark(TH)
+								</th>
+								<th class="border border-slate-300 px-2 ...">
+									FullMark(PR)
+								</th>
+								<th class="border border-slate-300 px-2 ...">
+									PassMark(PR)
 								</th>
 								<th class="border border-slate-300 px-2 ...">
 									Action
@@ -47,6 +53,12 @@ const Subject = () => {
 								</td>
 								<td class="border border-slate-300 px-2 ...">
 									Indiana
+								</td>
+								<td class="border border-slate-300 px-2 ...">
+									Indianapolis
+								</td>
+								<td class="border border-slate-300 px-2 ...">
+									Indianapolis
 								</td>
 								<td class="border border-slate-300 px-2 ...">
 									Indianapolis
@@ -88,6 +100,12 @@ const Subject = () => {
 								<td class="border border-slate-300 ...">
 									Indianapolis
 								</td>
+								<td class="border border-slate-300 px-2 ...">
+									Indianapolis
+								</td>
+								<td class="border border-slate-300 px-2 ...">
+									Indianapolis
+								</td>
 								<td class="border border-slate-300 px-2 py-2 flex justify-end">
 									<button class="mx-2 bg-lime-500 hover:bg-lime-600 text-white py-1 px-4 rounded-full">
 										<i class="ri-eye-line"></i>{" "}
@@ -119,6 +137,12 @@ const Subject = () => {
 								<td class="border border-slate-300 ...">
 									Indianapolis
 								</td>
+								<td class="border border-slate-300 px-2 ...">
+									Indianapolis
+								</td>
+								<td class="border border-slate-300 px-2 ...">
+									Indianapolis
+								</td>
 								<td class="border border-slate-300 px-2 py-2 flex justify-end">
 									<button class="mx-2 bg-lime-500 hover:bg-lime-600 text-white py-1 px-4 rounded-full">
 										<i class="ri-eye-line"></i>{" "}
@@ -144,6 +168,12 @@ const Subject = () => {
 								<td class="border border-slate-300 ...">
 									Indianapolis
 								</td>
+								<td class="border border-slate-300 px-2 ...">
+									Indianapolis
+								</td>
+								<td class="border border-slate-300 px-2 ...">
+									Indianapolis
+								</td>
 								<td class="border border-slate-300 ...">
 									Indianapolis
 								</td>
@@ -171,6 +201,12 @@ const Subject = () => {
 								</td>
 								<td class="border border-slate-300 ...">
 									Detroit
+								</td>
+								<td class="border border-slate-300 px-2 ...">
+									Indianapolis
+								</td>
+								<td class="border border-slate-300 px-2 ...">
+									Indianapolis
 								</td>
 								<td class="border border-slate-300 ...">
 									Indianapolis

@@ -1,8 +1,13 @@
 import React from 'react'
 import AdminLayout from '../../../Layouts/AdminLayout'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 const AddStaff = () => {
+	const navigate=useNavigate();
+	const staffschema=object({
+		
+		
+	})
   return (
 		<>
 			<div>
