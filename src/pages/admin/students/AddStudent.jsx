@@ -4,6 +4,8 @@ import { ErrorMessage, Formik } from "formik";
 import { string, object, number, date } from "yup";
 import axios from "axios";
 import axiosInstance from "../../../apiConfigs/axiosInstance";
+import useSWR from "swr";
+import { toast } from "react-toastify";
 
 function AddStudent() {
 	const navigate = useNavigate();
@@ -12,7 +14,7 @@ function AddStudent() {
 		middle_name: string().nullable(),
 		last_name: string().required(),
 		fullName_nepali: string().required(),
-		phone: string().required(),
+		// phone: string().required(),
 		dob: date().required(),
 		gender: string().required(),
 		address: string().required(),
@@ -23,9 +25,9 @@ function AddStudent() {
 		ethnicity: string().required(),
 		grade_id: number().required(),
 		address_school: string().required(),
-		documents: string().required(),
+		// documents: string().required(),
 		previous_school: string().required(),
-		guardian_id: number().required(),
+		// guardian_id: number().required(),
 		father_name: string().required(),
 		mother_name: string().required(),
 		contact_name: string().required(),
@@ -34,6 +36,14 @@ function AddStudent() {
 		mobile: string().required(),
 		email: string().required().email(),
 	});
+
+	const gradeFetcher = async (url) => await axiosInstance.get(url);
+
+	const { data: allGrades, error } = useSWR("/grades/all", gradeFetcher);
+
+	const grades = allGrades?.data.data.data;
+	console.log(grades);
+
 	return (
 		<>
 			<div className="my-5 w-full flex justify-between items-center">
@@ -60,6 +70,7 @@ function AddStudent() {
 						first_name: "",
 						middle_name: "",
 						last_name: "",
+						contact_name: "",
 						fullName_nepali: "",
 						phone: "",
 						dob: "",
@@ -74,10 +85,8 @@ function AddStudent() {
 						address_school: "",
 						documents: "",
 						previous_school: "",
-						guardian_id: "",
 						father_name: "",
 						mother_name: "",
-						contact_name: "",
 						parent_address: "",
 						telephone: "",
 						mobile: "",
@@ -86,12 +95,13 @@ function AddStudent() {
 					validationSchema={studentschema}
 					onSubmit={(values) => {
 						console.log(values);
-						// console.log("demo");
 						axiosInstance
 							.post("/students/store", values)
 							.then((res) => {
-								alert("added");
+								toast.success("Student Added Successfully");
 								navigate("/student");
+							}).catch((err) => {
+								toast.error(err.response.data.message);
 							});
 					}}
 				>
@@ -103,6 +113,7 @@ function AddStudent() {
 						handleBlur,
 						handleSubmit,
 					}) => {
+						console.log(errors)
 						return (
 							<form onSubmit={handleSubmit}>
 								<div className="grid md:grid-cols-3">
@@ -197,7 +208,7 @@ function AddStudent() {
 
 									<div>
 										<label
-											htmlFor="name"
+											htmlFor="age"
 											className="block text-gray-900"
 										>
 											Age
@@ -205,7 +216,7 @@ function AddStudent() {
 										<input
 											type="number"
 											name="age"
-											id="name"
+											id="age"
 											onChange={handleChange}
 											onBlur={handleBlur}
 											value={values.age}
@@ -225,7 +236,7 @@ function AddStudent() {
 											contact_no
 										</label>
 										<input
-											type="phone"
+											type="tel"
 											name="contact_no"
 											id="contact_no"
 											onChange={handleChange}
@@ -241,29 +252,7 @@ function AddStudent() {
 									</div>
 									<div>
 										<label
-											htmlFor="name"
-											className="block text-gray-900"
-										>
-											Phone
-										</label>
-										<input
-											type="phone"
-											name="phone"
-											id="name"
-											onChange={handleChange}
-											onBlur={handleBlur}
-											value={values.phone}
-											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
-										/>
-										<ErrorMessage
-											name="phone"
-											component="div"
-											className="text-red-500 text-sm"
-										/>
-									</div>
-									<div>
-										<label
-											htmlFor="name"
+											htmlFor="address"
 											className="block text-gray-900"
 										>
 											Address
@@ -271,7 +260,7 @@ function AddStudent() {
 										<input
 											type="text"
 											name="address"
-											id="name"
+											id="address"
 											onChange={handleChange}
 											onBlur={handleBlur}
 											value={values.address}
@@ -286,13 +275,13 @@ function AddStudent() {
 
 									<div>
 										<label
-											htmlFor="name"
+											htmlFor="email"
 											className="block text-gray-900"
 										>
 											Email
 										</label>
 										<input
-											type="text"
+											type="email"
 											name="email"
 											id="email"
 											onChange={handleChange}
@@ -313,15 +302,27 @@ function AddStudent() {
 										>
 											grade_id
 										</label>
-										<input
-											type="number"
-											name="grade_id"
+										<select
 											id="grade_id"
+											name="grade_id"
 											onChange={handleChange}
 											onBlur={handleBlur}
 											value={values.grade_id}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
-										/>
+										>
+											<option value="">Choose grade</option>
+											{grades &&
+												grades.map((grade) => {
+													return (
+														<option
+															key={grade.id}
+															value={grade.id}
+														>
+															{grade.name}
+														</option>
+													);
+												})}
+										</select>
 										<ErrorMessage
 											name="grade_id"
 											component="div"
@@ -539,22 +540,44 @@ function AddStudent() {
 									</div>
 									<div>
 										<label
+											htmlFor="mother's name"
+											className="block text-gray-900"
+										>
+											Contact Name
+										</label>
+										<input
+											type="text"
+											name="contact_name"
+											id="mother's name"
+											onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.contact_name}
+											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
+										/>
+										<ErrorMessage
+											name="contact_name"
+											component="div"
+											className="text-red-500 text-sm"
+										/>
+									</div>
+									<div>
+										<label
 											htmlFor="telephone"
 											className="block text-gray-900"
 										>
 											Phone
 										</label>
 										<input
-											type="phone"
-											name="phone"
-											id="phone"
+											type="tel"
+											name="telephone"
+											id="telephone"
 											onChange={handleChange}
 											onBlur={handleBlur}
-											value={values.phone}
+											value={values.telephone}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										/>
 										<ErrorMessage
-											name="phone"
+											name="telephone"
 											component="div"
 											className="text-red-500 text-sm"
 										/>
@@ -567,7 +590,7 @@ function AddStudent() {
 											Mobile
 										</label>
 										<input
-											type="phone"
+											type="tel"
 											name="mobile"
 											id="mobile"
 											onChange={handleChange}

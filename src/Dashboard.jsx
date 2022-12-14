@@ -8,6 +8,7 @@ import AddStaff from "./pages/admin/Staff/AddStaff";
 import Staff from "./pages/admin/Staff/Staff";
 import AddStudent from "./pages/admin/students/AddStudent";
 import Student from "./pages/admin/students/Student";
+import StudentDetail from "./pages/admin/students/StudentDetail";
 import AddTeacher from "./pages/admin/Teacher/AddTeacher";
 import Teacher from "./pages/admin/Teacher/Teacher";
 import AddSubject from "./pages/Subject/AddSubject";
@@ -22,6 +23,7 @@ function Dashboard() {
 					<Route path="/student">
 						<Route index element={<Student />} />
 						<Route path="create" element={<AddStudent />} />
+						<Route path=":id" element={<StudentDetail />} />
 					</Route>
 					<Route path="/teacher">
 						<Route index element={<Teacher />} />
