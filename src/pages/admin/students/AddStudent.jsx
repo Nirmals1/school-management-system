@@ -50,6 +50,18 @@ function AddStudent() {
 				<h1 className="text-gray-800 text-4xl font-bold ">
 					Add New Student
 				</h1>
+				<div className="flex items-center">
+            <div className="flex border border-purple-200 rounded">
+                <input
+                    type="text"
+                    className="block w-full px-4 py-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                    placeholder="Search..."
+                />
+                <button className="px-4 text-white bg-purple-600 border-l rounded ">
+                    Search
+                </button>
+            </div>
+        </div>
 
 				<button
 					onClick={() => navigate("/student")}
@@ -233,7 +245,7 @@ function AddStudent() {
 											htmlFor="contact_no"
 											className="block text-gray-900"
 										>
-											contact_no
+											Contact Number
 										</label>
 										<input
 											type="tel"
@@ -300,7 +312,7 @@ function AddStudent() {
 											htmlFor="grade_id"
 											className="block text-gray-900"
 										>
-											grade_id
+											Grade
 										</label>
 										<select
 											id="grade_id"

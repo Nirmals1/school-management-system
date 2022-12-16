@@ -19,6 +19,7 @@ const AddGrade = ({ mutate, editGrade, setEditGrade }) => {
 			<h1 className="text-gray-800 text-2xl font-bold mt-8 mb-3 ">
 				Grade Details
 			</h1>
+			
 			<hr className="my-2" />
 			<Formik
 				initialValues={{
@@ -70,6 +71,7 @@ const AddGrade = ({ mutate, editGrade, setEditGrade }) => {
 											>
 												Grade Name
 											</label>
+											
 											<input
 												type="text"
 												name="name"
@@ -102,7 +104,9 @@ const AddGrade = ({ mutate, editGrade, setEditGrade }) => {
 												}}
 											>
 												Cancel
+												
 											</div>
+											
 										)}
 									</div>
 								</div>
