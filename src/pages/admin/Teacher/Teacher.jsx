@@ -43,19 +43,19 @@ const Teacher = () => {
 						<tbody>
 							<tr>
 								<td class="border border-slate-300 px-2 ...">
-									Indiana
+									1
 								</td>
 								<td class="border border-slate-300 px-2 ...">
-									Indiana
+								Nirmal Subedi
 								</td>
 								<td class="border border-slate-300 px-2 ...">
-									Indianapolis
+									Gaindakot, Nawalpur
 								</td>
 								<td class="border border-slate-300 px-2 ...">
-									Indianapolis
+									Msc. CSIT
 								</td>
 								<td class="border border-slate-300 px-2 ...">
-									Indianapolis
+									9865744321
 								</td>
 								<td class="border border-slate-300 px-2 py-2 flex justify-end">
 									<button class="mx-2 bg-lime-500 hover:bg-lime-600 text-white py-1 px-4 rounded-full">
@@ -74,19 +74,19 @@ const Teacher = () => {
 							</tr>
 							<tr>
 								<td class="border border-slate-300 px-2 ...">
-									Indiana
+									2
 								</td>
-								<td class="border border-slate-300 ...">
-									Ohio
+								<td class="border border-slate-300 px-2 ...">
+								Sabin Shrestha
 								</td>
-								<td class="border border-slate-300 ...">
-									Columbus
+								<td class="border border-slate-300 px-2 ...">
+									Gaindakot, Nawalpur
 								</td>
-								<td class="border border-slate-300 ...">
-									Indianapolis
+								<td class="border border-slate-300 px-2 ...">
+									Msc. Physics
 								</td>
-								<td class="border border-slate-300 ...">
-									Indianapolis
+								<td class="border border-slate-300 px-2 ...">
+									9863451245
 								</td>
 								<td class="border border-slate-300 px-2 py-2 flex justify-end">
 									<button class="mx-2 bg-lime-500 hover:bg-lime-600 text-white py-1 px-4 rounded-full">
@@ -105,19 +105,19 @@ const Teacher = () => {
 							</tr>
 							<tr>
 								<td class="border border-slate-300 px-2 ...">
-									Indiana
+									3
 								</td>
-								<td class="border border-slate-300 ...">
-									Detroit
+								<td class="border border-slate-300 px-2 ...">
+									Payal Gurung
 								</td>
-								<td class="border border-slate-300 ...">
-									Indianapolis
+								<td class="border border-slate-300 px-2 ...">
+									Chitwan
 								</td>
-								<td class="border border-slate-300 ...">
-									Indianapolis
+								<td class="border border-slate-300 px-2 ...">
+									Bsc.CSIT
 								</td>
-								<td class="border border-slate-300 ...">
-									Indianapolis
+								<td class="border border-slate-300 px-2 ...">
+									9864522845
 								</td>
 								<td class="border border-slate-300 px-2 py-2 flex justify-end">
 									<button class="mx-2 bg-lime-500 hover:bg-lime-600 text-white py-1 px-4 rounded-full">
@@ -136,19 +136,19 @@ const Teacher = () => {
 							</tr>
 							<tr>
 								<td class="border border-slate-300 px-2 ...">
-									Indiana
+									4
 								</td>
-								<td class="border border-slate-300 ...">
-									Detroit
+								<td class="border border-slate-300 px-2 ...">
+									Nischal Khatiwada
 								</td>
-								<td class="border border-slate-300 ...">
-									Indianapolis
+								<td class="border border-slate-300 px-2 ...">
+									Tadi, Chitwan
 								</td>
-								<td class="border border-slate-300 ...">
-									Indianapolis
+								<td class="border border-slate-300 px-2 ...">
+									MBA
 								</td>
-								<td class="border border-slate-300 ...">
-									Indianapolis
+								<td class="border border-slate-300 px-2 ...">
+									9873266153
 								</td>
 								<td class="border border-slate-300 px-2 py-2 flex justify-end">
 									<button class="mx-2 bg-lime-500 hover:bg-lime-600 text-white py-1 px-4 rounded-full">
@@ -167,19 +167,19 @@ const Teacher = () => {
 							</tr>
 							<tr>
 								<td class="border border-slate-300 px-2 ...">
-									Indiana
+									5
 								</td>
-								<td class="border border-slate-300 ...">
-									Detroit
+								<td class="border border-slate-300 px-2 ...">
+									Nirmal Subedi
 								</td>
-								<td class="border border-slate-300 ...">
-									Indianapolis
+								<td class="border border-slate-300 px-2 ...">
+									Gaindakot
 								</td>
-								<td class="border border-slate-300 ...">
-									Indianapolis
+								<td class="border border-slate-300 px-2 ...">
+									BCA
 								</td>
-								<td class="border border-slate-300 ...">
-									Indianapolis
+								<td class="border border-slate-300 px-2 ...">
+									9863544511
 								</td>
 								<td class="border border-slate-300 px-2 py-2 flex justify-end">
 									<button class="mx-2 bg-lime-500 hover:bg-lime-600 text-white py-1 px-4 rounded-full">

@@ -4,6 +4,7 @@ import AdminLayout from "./Layouts/AdminLayout";
 import Category from "./pages/admin/Category/Category";
 import AddGrade from "./pages/admin/Grade/AddGrade";
 import Grade from "./pages/admin/Grade/Grade";
+import Index from "./pages/admin/Index";
 import AddStaff from "./pages/admin/Staff/AddStaff";
 import Staff from "./pages/admin/Staff/Staff";
 import AddStudent from "./pages/admin/students/AddStudent";
@@ -19,7 +20,7 @@ function Dashboard() {
 		<>
 			<AdminLayout>
 				<Routes>
-					<Route path="/" element={<h1>Dashboard</h1>} />
+					<Route path="/" element={<Index/>} />
 					<Route path="/student">
 						<Route index element={<Student />} />
 						<Route path="create" element={<AddStudent />} />

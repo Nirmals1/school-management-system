@@ -1,13 +1,9 @@
-import { CircularProgress } from "@material-ui/core";
 import { Formik } from "formik";
 import React, { useEffect } from "react";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import useSWR from "swr";
 import { number, object, string } from "yup";
 import axiosInstance from "../../../apiConfigs/axiosInstance";
-import AdminLayout from "../../../Layouts/AdminLayout";
 
 const AddGrade = ({ mutate, editGrade, setEditGrade }) => {
 	const gradeschema = object({

@@ -50,19 +50,6 @@ function AddStudent() {
 				<h1 className="text-gray-800 text-4xl font-bold ">
 					Add New Student
 				</h1>
-				<div className="flex items-center">
-            <div className="flex border border-purple-200 rounded">
-                <input
-                    type="text"
-                    className="block w-full px-4 py-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                    placeholder="Search..."
-                />
-                <button className="px-4 text-white bg-purple-600 border-l rounded ">
-                    Search
-                </button>
-            </div>
-        </div>
-
 				<button
 					onClick={() => navigate("/student")}
 					className="text-white bg-gray-500 hover:bg-gray-600 px-4 py-1 rounded-full shadow-sm"
@@ -112,7 +99,8 @@ function AddStudent() {
 							.then((res) => {
 								toast.success("Student Added Successfully");
 								navigate("/student");
-							}).catch((err) => {
+							})
+							.catch((err) => {
 								toast.error(err.response.data.message);
 							});
 					}}
@@ -125,7 +113,7 @@ function AddStudent() {
 						handleBlur,
 						handleSubmit,
 					}) => {
-						console.log(errors)
+						console.log(errors);
 						return (
 							<form onSubmit={handleSubmit}>
 								<div className="grid md:grid-cols-3">
@@ -322,7 +310,9 @@ function AddStudent() {
 											value={values.grade_id}
 											className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
 										>
-											<option value="">Choose grade</option>
+											<option value="">
+												Choose grade
+											</option>
 											{grades &&
 												grades.map((grade) => {
 													return (

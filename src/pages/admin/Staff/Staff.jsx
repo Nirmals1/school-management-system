@@ -39,19 +39,51 @@ const Staff = () => {
 					<tbody>
 						<tr>
 							<td class="border border-slate-300 px-2 ...">
-								Indiana
+								1
 							</td>
 							<td class="border border-slate-300 px-2 ...">
-								Indiana
+								Youdin Bhandari
 							</td>
 							<td class="border border-slate-300 px-2 ...">
-								Indianapolis
+								9845366256
 							</td>
 							<td class="border border-slate-300 px-2 ...">
-								Indianapolis
+								Gaindakot
 							</td>
 							<td class="border border-slate-300 px-2 ...">
-								Indianapolis
+								102237
+							</td>
+							<td class="border border-slate-300 px-2 py-2 flex justify-end">
+								<button class="mx-2 bg-lime-500 hover:bg-lime-600 text-white py-1 px-4 rounded-full">
+									<i class="ri-eye-line"></i>{" "}
+									<span className="px-1">View</span>
+								</button>
+								<button class="mx-2 bg-indigo-500 hover:bg-indigo-600 text-white py-1 px-4 rounded-full">
+									<i class="ri-edit-circle-line"></i>{" "}
+									<span className="px-1">Edit</span>
+								</button>
+								<button class="mx-2 bg-red-500 hover:bg-red-600 text-white py-1 px-4 rounded-full">
+									<i class="ri-delete-bin-4-line"></i>{" "}
+									<span className="px-1">Delete</span>
+								</button>
+							</td>
+						</tr>
+						
+						<tr>
+							<td class="border border-slate-300 px-2 ...">
+								2
+							</td>
+							<td class="border border-slate-300 px-2 ...">
+								Samir Chettri
+							</td>
+							<td class="border border-slate-300 px-2 ...">
+								9743873547
+							</td>
+							<td class="border border-slate-300 px-2 ...">
+								Butwal
+							</td>
+							<td class="border border-slate-300 px-2 ...">
+								983546
 							</td>
 							<td class="border border-slate-300 px-2 py-2 flex justify-end">
 								<button class="mx-2 bg-lime-500 hover:bg-lime-600 text-white py-1 px-4 rounded-full">
@@ -70,17 +102,19 @@ const Staff = () => {
 						</tr>
 						<tr>
 							<td class="border border-slate-300 px-2 ...">
-								Indiana
+								3
 							</td>
-							<td class="border border-slate-300 ...">Ohio</td>
-							<td class="border border-slate-300 ...">
-								Columbus
+							<td class="border border-slate-300 px-2 ...">
+								Sagar Thapa
 							</td>
-							<td class="border border-slate-300 ...">
-								Indianapolis
+							<td class="border border-slate-300 px-2 ...">
+								9835263545
 							</td>
-							<td class="border border-slate-300 ...">
-								Indianapolis
+							<td class="border border-slate-300 px-2 ...">
+								Nepalgunj
+							</td>
+							<td class="border border-slate-300 px-2 ...">
+								56789
 							</td>
 							<td class="border border-slate-300 px-2 py-2 flex justify-end">
 								<button class="mx-2 bg-lime-500 hover:bg-lime-600 text-white py-1 px-4 rounded-full">
@@ -99,75 +133,19 @@ const Staff = () => {
 						</tr>
 						<tr>
 							<td class="border border-slate-300 px-2 ...">
-								Indiana
+								4
 							</td>
-							<td class="border border-slate-300 ...">Detroit</td>
-							<td class="border border-slate-300 ...">
-								Indianapolis
-							</td>
-							<td class="border border-slate-300 ...">
-								Indianapolis
-							</td>
-							<td class="border border-slate-300 ...">
-								Indianapolis
-							</td>
-							<td class="border border-slate-300 px-2 py-2 flex justify-end">
-								<button class="mx-2 bg-lime-500 hover:bg-lime-600 text-white py-1 px-4 rounded-full">
-									<i class="ri-eye-line"></i>{" "}
-									<span className="px-1">View</span>
-								</button>
-								<button class="mx-2 bg-indigo-500 hover:bg-indigo-600 text-white py-1 px-4 rounded-full">
-									<i class="ri-edit-circle-line"></i>{" "}
-									<span className="px-1">Edit</span>
-								</button>
-								<button class="mx-2 bg-red-500 hover:bg-red-600 text-white py-1 px-4 rounded-full">
-									<i class="ri-delete-bin-4-line"></i>{" "}
-									<span className="px-1">Delete</span>
-								</button>
-							</td>
-						</tr>
-						<tr>
 							<td class="border border-slate-300 px-2 ...">
-								Indiana
+								Bindu Khanal
 							</td>
-							<td class="border border-slate-300 ...">Detroit</td>
-							<td class="border border-slate-300 ...">
-								Indianapolis
-							</td>
-							<td class="border border-slate-300 ...">
-								Indianapolis
-							</td>
-							<td class="border border-slate-300 ...">
-								Indianapolis
-							</td>
-							<td class="border border-slate-300 px-2 py-2 flex justify-end">
-								<button class="mx-2 bg-lime-500 hover:bg-lime-600 text-white py-1 px-4 rounded-full">
-									<i class="ri-eye-line"></i>{" "}
-									<span className="px-1">View</span>
-								</button>
-								<button class="mx-2 bg-indigo-500 hover:bg-indigo-600 text-white py-1 px-4 rounded-full">
-									<i class="ri-edit-circle-line"></i>{" "}
-									<span className="px-1">Edit</span>
-								</button>
-								<button class="mx-2 bg-red-500 hover:bg-red-600 text-white py-1 px-4 rounded-full">
-									<i class="ri-delete-bin-4-line"></i>{" "}
-									<span className="px-1">Delete</span>
-								</button>
-							</td>
-						</tr>
-						<tr>
 							<td class="border border-slate-300 px-2 ...">
-								Indiana
+								9835466255
 							</td>
-							<td class="border border-slate-300 ...">Detroit</td>
-							<td class="border border-slate-300 ...">
-								Indianapolis
+							<td class="border border-slate-300 px-2 ...">
+								Illam
 							</td>
-							<td class="border border-slate-300 ...">
-								Indianapolis
-							</td>
-							<td class="border border-slate-300 ...">
-								Indianapolis
+							<td class="border border-slate-300 px-2 ...">
+								42738
 							</td>
 							<td class="border border-slate-300 px-2 py-2 flex justify-end">
 								<button class="mx-2 bg-lime-500 hover:bg-lime-600 text-white py-1 px-4 rounded-full">
@@ -184,6 +162,7 @@ const Staff = () => {
 								</button>
 							</td>
 						</tr>
+						
 					</tbody>
 				</table>
 			</div>

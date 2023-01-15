@@ -6,12 +6,15 @@ import axiosInstance from "../../apiConfigs/axiosInstance";
 
 const AddSubject = () => {
   const subjectschema = object({
-    subjectid: string().required(),
-    subjectname: string().required(),
-    fullmarkth: number().required(),
-    passmarkth: number().required(),
-    fullmarkpr: number().required(),
-    passmarkpr: number().required(),
+    code: string().required(),
+    name: string().required(),
+    fullmarks_th: number().required(),
+    passmarks_th: number().required(),
+    fullmarks_pr: number().required(),
+    passmarks_pr: number().required(),
+    grade_id: number().required(),
+    category_id: number().required(),
+    teacher_id: number().required(),
   });
   return (
     <div>
@@ -21,12 +24,15 @@ const AddSubject = () => {
       <hr className="my-2" />
       <Formik
         initialValues={{
-          subjectid: "",
-          subjectname: "",
-          fullmarkth: "",
-          passmarkth: "",
-          fullmarkpr: "",
-          passmarkpr: "",
+          code: "",
+          name: "",
+          fullmarks_th: "",
+          passmarks_th: "",
+          fullmarks_pr: "",
+          passmarks_pr: "",
+          grade_id: "",
+          category_id: "",
+          teacher_id: "",
         }}
         validationSchema={subjectschema}
         onSubmit={(values) => {
@@ -49,115 +55,178 @@ const AddSubject = () => {
           <form onSubmit={handleSubmit}>
             <div className="grid grid-cols-2 ">
               <div>
-                <label htmlFor="subjectid" className="block text-gray-900">
-                  Subject ID
+                <label htmlFor="code" className="block text-gray-900">
+                  Subject Code
                 </label>
                 <input
                   type="text"
-                  name="subjectid"
-                  id="subjectid"
+                  name="code"
+                  id="code"
                   onChange={handleChange}
 											onBlur={handleBlur}
-											value={values.subjectid}
+											value={values.code}
                   className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
                 />
                 <ErrorMessage
-                  name="subjectid"
+                  name="code"
                   component="div"
                   className="text-red-500 text-sm"
                 />
               </div>
               <div>
-                <label htmlFor="subjectname" className="block text-gray-900">
+                <label htmlFor="name" className="block text-gray-900">
                   Subject Name
                 </label>
                 <input
                   type="text"
-                  name="subjectname"
-                  id="subjectname"
+                  name="name"
+                  id="name"
                   onChange={handleChange}
 											onBlur={handleBlur}
-											value={values.subjectname}
+											value={values.name}
                   className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
                 />
                 <ErrorMessage
-                  name="subjectname"
+                  name="name"
                   component="div"
                   className="text-red-500 text-sm"
                 />
               </div>
               <div>
-                <label htmlFor="fullmarkth" className="block text-gray-900">
+                <label htmlFor="fullmarks_th" className="block text-gray-900">
                   Full Mark TH
                 </label>
                 <input
                   type="text"
-                  name="fullmarkth"
-                  id="fullmarkth"
+                  name="fullmarks_th"
+                  id="fullmarks_th"
                   onChange={handleChange}
 											onBlur={handleBlur}
-											value={values.fullmarkth}
+											value={values.fullmarks_th}
                   className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
                 />
                 <ErrorMessage
-                  name="fullmarkth"
+                  name="fullmarks_th"
                   component="div"
                   className="text-red-500 text-sm"
                 />
               </div>
               <div>
-                <label htmlFor="passmarkth" className="block text-gray-900">
+                <label htmlFor="passmarks_th" className="block text-gray-900">
                   Pass Mark TH
                 </label>
                 <input
                   type="text"
-                  name="passmarkth"
-                  id="passmarkth"
+                  name="passmarks_th"
+                  id="passmarks_th"
                   onChange={handleChange}
 											onBlur={handleBlur}
-											value={values.passmarkth}
+											value={values.passmarks_th}
                   className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
                 />
                 <ErrorMessage
-                  name="passmarkth"
+                  name="passmarks_th"
                   component="div"
                   className="text-red-500 text-sm"
                 />
               </div>
               <div>
-                <label htmlFor="fullmarkpr" className="block text-gray-900">
+                <label htmlFor="fullmarks_pr" className="block text-gray-900">
                   Full Mark PR
                 </label>
                 <input
                   type="text"
-                  name="fullmarkpr"
-                  id="fullmarkpr"
+                  name="fullmarks_pr"
+                  id="fullmarks_pr"
                   onChange={handleChange}
 											onBlur={handleBlur}
-											value={values.fullmarkpr}
+											value={values.fullmarks_pr}
                   className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
                 />
                 <ErrorMessage
-                  name="fullmarkpr"
+                  name="fullmarks_pr"
                   component="div"
                   className="text-red-500 text-sm"
                 />
               </div>
               <div>
-                <label htmlFor="passmarkpr" className="block text-gray-900">
+                <label htmlFor="passmarks_pr" className="block text-gray-900">
                   Pass Mark PR
                 </label>
                 <input
                   type="text"
-                  name="passmarkpr"
-                  id="passmarkpr"
+                  name="passmarks_pr"
+                  id="passmarks_pr"
                   onChange={handleChange}
 											onBlur={handleBlur}
-											value={values.passmarkpr}
+											value={values.passmarks_pr}
                   className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
                 />
                 <ErrorMessage
-                  name="passmarkpr"
+                  name="passmarks_pr"
+                  component="div"
+                  className="text-red-500 text-sm"
+                />
+              </div>
+              <div>
+                <label htmlFor="passmarks_pr" className="block text-gray-900">
+                  Category
+                </label>
+                <select
+                  type="text"
+                  name="category_id"
+                  id="category_id"
+                  onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.category_id}
+                  className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
+                >
+                  <option value="">Select Grade</option>
+                </select>
+                <ErrorMessage
+                  name="category_id"
+                  component="div"
+                  className="text-red-500 text-sm"
+                />
+              </div>
+              <div>
+                <label htmlFor="passmarks_pr" className="block text-gray-900">
+                  Grade
+                </label>
+                <select
+                  type="text"
+                  name="grade_id"
+                  id="grade_id"
+                  onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.grade_id}
+                  className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
+                >
+                  <option value="">Select Grade</option>
+                </select>
+                <ErrorMessage
+                  name="grade_id"
+                  component="div"
+                  className="text-red-500 text-sm"
+                />
+              </div>
+              <div>
+                <label htmlFor="passmarks_pr" className="block text-gray-900">
+                  Teacher
+                </label>
+                <select
+                  type="text"
+                  name="teacher_id"
+                  id="teacher_id"
+                  onChange={handleChange}
+											onBlur={handleBlur}
+											value={values.teacher_id}
+                  className="rounded-md shadow-md border border-gray-300 hover:border-gray-400 px-4 my-2 py-2"
+                >
+                  <option value="">Select Grade</option>
+                </select>
+                <ErrorMessage
+                  name="teacher_id"
                   component="div"
                   className="text-red-500 text-sm"
                 />

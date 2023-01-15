@@ -4,13 +4,13 @@ import NavMenu from "../navlinks/NavMenu";
 function Sidebar() {
   return (
 		<>
-			<div className="w-72 shadow-md min-h-screen max-h-fit bg-gray-50">
+			<div className="w-2/12 shadow-md min-h-screen max-h-fit bg-gray-50">
 				<div className="my-5 flex items-center mx-5">
 					<div className="w-36 rounded-full h-full">
 						<img
 							src="https://picsum.photos/200"
 							alt="Logo"
-							className="w-28 h-28 object-fill   rounded-full border border-gray-100 shadow-lg "
+							className=" object-fill rounded-full border border-gray-100 shadow-lg "
 						/>
 					</div>
 					<div className="mx-4">

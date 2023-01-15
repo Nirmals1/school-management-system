@@ -49,25 +49,25 @@ const Subject = () => {
 						<tbody>
 							<tr>
 								<td class="border border-slate-300 px-2 ...">
-									Indiana
+									1
 								</td>
 								<td class="border border-slate-300 px-2 ...">
-									Indiana
+									CACS101
 								</td>
 								<td class="border border-slate-300 px-2 ...">
-									Indianapolis
+									Mathematics
 								</td>
 								<td class="border border-slate-300 px-2 ...">
-									Indianapolis
+									100
 								</td>
 								<td class="border border-slate-300 px-2 ...">
-									Indianapolis
+									32
 								</td>
 								<td class="border border-slate-300 px-2 ...">
-									Indianapolis
+									--
 								</td>
 								<td class="border border-slate-300 px-2 ...">
-									Indianapolis
+									--
 								</td>
 								<td class="border border-slate-300 px-2 py-2 flex justify-end">
 									<button class="mx-2 bg-lime-500 hover:bg-lime-600 text-white py-1 px-4 rounded-full">
@@ -86,25 +86,25 @@ const Subject = () => {
 							</tr>
 							<tr>
 								<td class="border border-slate-300 px-2 ...">
-									Indiana
-								</td>
-								<td class="border border-slate-300 ...">
-									Ohio
-								</td>
-								<td class="border border-slate-300 ...">
-									Columbus
-								</td>
-								<td class="border border-slate-300 ...">
-									Indianapolis
-								</td>
-								<td class="border border-slate-300 ...">
-									Indianapolis
+									2
 								</td>
 								<td class="border border-slate-300 px-2 ...">
-									Indianapolis
+									CACS102
 								</td>
 								<td class="border border-slate-300 px-2 ...">
-									Indianapolis
+									Computer Science
+								</td>
+								<td class="border border-slate-300 px-2 ...">
+									75
+								</td>
+								<td class="border border-slate-300 px-2 ...">
+									24
+								</td>
+								<td class="border border-slate-300 px-2 ...">
+									25
+								</td>
+								<td class="border border-slate-300 px-2 ...">
+									8
 								</td>
 								<td class="border border-slate-300 px-2 py-2 flex justify-end">
 									<button class="mx-2 bg-lime-500 hover:bg-lime-600 text-white py-1 px-4 rounded-full">
@@ -123,25 +123,25 @@ const Subject = () => {
 							</tr>
 							<tr>
 								<td class="border border-slate-300 px-2 ...">
-									Indiana
-								</td>
-								<td class="border border-slate-300 ...">
-									Detroit
-								</td>
-								<td class="border border-slate-300 ...">
-									Indianapolis
-								</td>
-								<td class="border border-slate-300 ...">
-									Indianapolis
-								</td>
-								<td class="border border-slate-300 ...">
-									Indianapolis
+									3
 								</td>
 								<td class="border border-slate-300 px-2 ...">
-									Indianapolis
+									CACS103
 								</td>
 								<td class="border border-slate-300 px-2 ...">
-									Indianapolis
+									Science
+								</td>
+								<td class="border border-slate-300 px-2 ...">
+									75
+								</td>
+								<td class="border border-slate-300 px-2 ...">
+									24
+								</td>
+								<td class="border border-slate-300 px-2 ...">
+									25
+								</td>
+								<td class="border border-slate-300 px-2 ...">
+									8
 								</td>
 								<td class="border border-slate-300 px-2 py-2 flex justify-end">
 									<button class="mx-2 bg-lime-500 hover:bg-lime-600 text-white py-1 px-4 rounded-full">
@@ -160,62 +160,25 @@ const Subject = () => {
 							</tr>
 							<tr>
 								<td class="border border-slate-300 px-2 ...">
-									Indiana
-								</td>
-								<td class="border border-slate-300 ...">
-									Detroit
-								</td>
-								<td class="border border-slate-300 ...">
-									Indianapolis
+									4
 								</td>
 								<td class="border border-slate-300 px-2 ...">
-									Indianapolis
+									CACS104
 								</td>
 								<td class="border border-slate-300 px-2 ...">
-									Indianapolis
-								</td>
-								<td class="border border-slate-300 ...">
-									Indianapolis
-								</td>
-								<td class="border border-slate-300 ...">
-									Indianapolis
-								</td>
-								<td class="border border-slate-300 px-2 py-2 flex justify-end">
-									<button class="mx-2 bg-lime-500 hover:bg-lime-600 text-white py-1 px-4 rounded-full">
-										<i class="ri-eye-line"></i>{" "}
-										<span className="px-1">View</span>
-									</button>
-									<button class="mx-2 bg-indigo-500 hover:bg-indigo-600 text-white py-1 px-4 rounded-full">
-										<i class="ri-edit-circle-line"></i>{" "}
-										<span className="px-1">Edit</span>
-									</button>
-									<button class="mx-2 bg-red-500 hover:bg-red-600 text-white py-1 px-4 rounded-full">
-										<i class="ri-delete-bin-4-line"></i>{" "}
-										<span className="px-1">Delete</span>
-									</button>
-								</td>
-							</tr>
-							<tr>
-								<td class="border border-slate-300 px-2 ...">
-									Indiana
-								</td>
-								<td class="border border-slate-300 ...">
-									Detroit
+									Social Studies
 								</td>
 								<td class="border border-slate-300 px-2 ...">
-									Indianapolis
+									100
 								</td>
 								<td class="border border-slate-300 px-2 ...">
-									Indianapolis
+									32
 								</td>
-								<td class="border border-slate-300 ...">
-									Indianapolis
+								<td class="border border-slate-300 px-2 ...">
+									--
 								</td>
-								<td class="border border-slate-300 ...">
-									Indianapolis
-								</td>
-								<td class="border border-slate-300 ...">
-									Indianapolis
+								<td class="border border-slate-300 px-2 ...">
+									--
 								</td>
 								<td class="border border-slate-300 px-2 py-2 flex justify-end">
 									<button class="mx-2 bg-lime-500 hover:bg-lime-600 text-white py-1 px-4 rounded-full">
