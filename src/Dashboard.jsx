@@ -12,6 +12,7 @@ import Student from "./pages/admin/students/Student";
 import StudentDetail from "./pages/admin/students/StudentDetail";
 import AddTeacher from "./pages/admin/Teacher/AddTeacher";
 import Teacher from "./pages/admin/Teacher/Teacher";
+import Profile from "./pages/Profile";
 import AddSubject from "./pages/Subject/AddSubject";
 import Subject from "./pages/Subject/Subject";
 
@@ -45,6 +46,10 @@ function Dashboard() {
 					<Route path="/category">
 						<Route index element={<Category />} />
 					</Route>
+					<Route path="/profile">
+						<Route index element={<Profile />} />
+					</Route>
+					
 				</Routes>
 			</AdminLayout>
 		</>

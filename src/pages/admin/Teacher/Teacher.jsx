@@ -46,7 +46,7 @@ const Teacher = () => {
 									1
 								</td>
 								<td class="border border-slate-300 px-2 ...">
-								Nirmal Subedi
+								Abid Subedi
 								</td>
 								<td class="border border-slate-300 px-2 ...">
 									Gaindakot, Nawalpur
@@ -170,7 +170,7 @@ const Teacher = () => {
 									5
 								</td>
 								<td class="border border-slate-300 px-2 ...">
-									Nirmal Subedi
+									Nirmala Subedi
 								</td>
 								<td class="border border-slate-300 px-2 ...">
 									Gaindakot

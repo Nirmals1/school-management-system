@@ -15,7 +15,7 @@ function Sidebar() {
 					</div>
 					<div className="mx-4">
 						<h1 className="text-lg font-bold text-gray-600">
-							Nirmal Subedi
+							Admin Admin
 						</h1>
 						<h1 className="text-xs font-semibold text-gray-400">
 							Admin Panel

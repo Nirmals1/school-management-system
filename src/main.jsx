@@ -18,15 +18,18 @@ import Subject from "./pages/Subject/Subject";
 import AddSubject from "./pages/Subject/AddSubject";
 import Login from "./pages/Login";
 import { ToastContainer } from "react-toastify";
+import Profile from './pages/Profile';
+import Test from './pages/Test';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-	<React.StrictMode>
+	// <React.StrictMode>
 		<Router>
 			<Routes>
 				<Route path="/login" element={<Login />} />
+				<Route path="/test/app-tracker" element={<Test />} />
 				<Route path="/*" element={<Dashboard />} />
 			</Routes>
 			<ToastContainer />
 		</Router>
-	</React.StrictMode>
+	// </React.StrictMode>
 );
